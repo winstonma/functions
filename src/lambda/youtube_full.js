@@ -9,10 +9,10 @@ exports.handler = async (event, context) => {
   try {
     response = await ytdl.getInfo(videoID);
     // handle response
-      const format = ytdl.chooseFormat(response.formats, { quality: "136" })
-      response.formats = format
-      delete response["related_videos"]
-      delete response["player_response"]
+    const format = ytdl.chooseFormat(response.formats, { quality: "136" });
+    response.formats = format;
+    delete response["related_videos"];
+    delete response["player_response"];
   } catch (err) {
     return {
       statusCode: err.statusCode || 500,
