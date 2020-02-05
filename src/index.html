@@ -149,6 +149,38 @@
       </form>
     </article>
 
+    <article>
+      <h2>Youtube</h2>
+      <p>
+        Customize the greeting calling the Lambda endpoint with an optional
+        <code>name</code> parameter.
+      </p>
+      <pre class="language-js"><code><%= require('html-loader!./lambda/youtube.js') %></code></pre>
+      <h3>Try it out</h3>
+      <form action="/.netlify/functions/youtube">
+        <p>
+          <label>Please enter a Youtube Video ID (e.g. UVV80kTudSM)<br/><input type="text" name="videoID"></label>
+        </p>
+        <p><button type="submit">Get Youtube Response</button></p>
+      </form>
+    </article>
+
+    <article>
+      <h2>Youtube (Full)</h2>
+      <p>
+        Customize the greeting calling the Lambda endpoint with an optional
+        <code>name</code> parameter.
+      </p>
+      <pre class="language-js"><code><%= require('html-loader!./lambda/youtube_full.js') %></code></pre>
+      <h3>Try it out</h3>
+      <form action="/.netlify/functions/youtube_full">
+        <p>
+          <label>Please enter a Youtube Video ID (e.g. UVV80kTudSM)<br/><input type="text" name="videoID"></label>
+        </p>
+        <p><button type="submit">Get Youtube Response</button></p>
+      </form>
+    </article>
+
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.14.0/prism.min.js"></script>
     <script src="main.js"></script>
   </body>
