@@ -24,7 +24,10 @@ exports.handler = async (event, context) => {
 
   return {
     statusCode: 200,
-    headers: { "content-type": "application/json" },
+    headers: {
+      "content-type": "application/json",
+      "cache-control": "no-cache no-store max-age=0 must-revalidate"
+    },
     body: JSON.stringify(response)
   };
 };
