@@ -13,16 +13,15 @@ exports.handler = async (event, context) => {
       response.formats = format;
       delete response["related_videos"];
       delete response["player_response"];
-      return response;
+      return {
+        statusCode: 200,
+        headers: {
+          "content-type": "application/json",
+          "cache-control": "no-cache no-store max-age=0 must-revalidate"
+        },
+        body: JSON.stringify(response)
+      };
     })
-    .then(response => ({
-      statusCode: 200,
-      headers: {
-        "content-type": "application/json",
-        "cache-control": "no-cache no-store max-age=0 must-revalidate"
-      },
-      body: JSON.stringify(response)
-    }))
     .catch(error => ({
       statusCode: error.statusCode || 500,
       body: JSON.stringify({
