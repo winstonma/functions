@@ -1,8 +1,6 @@
 import ytdl from "ytdl-core";
 
 exports.handler = async (event, context) => {
-  let response;
-
   const videoID =
     event.queryStringParameters && event.queryStringParameters.videoID;
 
