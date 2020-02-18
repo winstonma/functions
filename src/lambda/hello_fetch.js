@@ -8,12 +8,11 @@ exports.handler = async (event, context) => {
   return fetch(API_ENDPOINT, { headers: { Accept: "application/json" } })
     .then(response => response.json())
     .then(response => {
-      response["joke"] = name + ": " + response.joke;
-      return response;
+      return name.concat(': ', response.joke)
     })
     .then(data => ({
       statusCode: 200,
-      body: data.joke
+      body: data
     }))
     .catch(error => ({ statusCode: 422, body: String(error) }));
 };
